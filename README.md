@@ -1,2 +1,3 @@
 # xslt-study
-XSLT study notes
+
+[XSLT study notes](xslt-study-notes.md)
