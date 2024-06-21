@@ -63,6 +63,10 @@ An XSLT processor will process an xml document as follows:
 
 FIXME The above means order does not matter.
 
+FIXME If I have two templates: `<xsl:template select="foo">` and `<xsl:template select="bar">`, which one executes first? You are supposed to be able to set priority but I can't get it to work.
+
+(FIXME Not from the book but probably true -- the processing begins with a virtual call to `<xsl:apply-templates select="/"/>`)
+
 ## XSLT processing
 
 ### Dots, Asterisks and Ands
@@ -163,3 +167,30 @@ A _location path_ describes the location of something in an XML document. The pa
 Everything we do in XPath is interpreted with respect to the context.
 
 You can think of an XML document as a hierarchy of directories in a filesystem. If I go to a command line and execute a particular command (such as `ls *.xsl`), the results I get vary depending on the current directory. Similarly, the results of evaluating an XPath expression will probably vary based on the context.
+
+## Xsl elements
+
+### `<xsl:message>`
+
+Useful for debugging:
+
+    <xsl:message>foo = <xsl:value-of select="$foo"/></xsl:message>
+
+### `<xsl:call-template>`
+
+    <xsl:call-template name="addChild">
+      <xsl:with-param name="foo" select="$x" />
+      <xsl:with-param name="bar" select="$y" />
+      <xsl:with-param name="muk" select="$z" />
+    </xsl:call-template>
+
+Is equivalent to `addChild(foo, bar, muk)`
+
+If you get a message like "Parameter foo does not exist" it is because the target template `addChild` does not have a parameter with that name.
+
+    <xsl:template name="addChild">
+      <xsl:param name="foo" />
+      <xsl:param name="bar" />
+      <xsl:param name="muk" />
+      <!-- Do some work -->
+    </xsl:template>
