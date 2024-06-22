@@ -1,6 +1,8 @@
 # XSLT processing
 
-XSLT will walk the document tree (depth first or breadth first is implementation dependent and doesn't matter) and processes each node.
+XSLT will walk the document tree and processes each node.
+
+Depth first or breadth first is implementation-dependent and doesn't matter. See [Input and output](#input-and-output).
 
 An XSLT processor will process an xml document as follows:
 
@@ -13,18 +15,18 @@ The initial stylesheet invocation generally does an implicit `<xsl:apply-templat
 
 ## Input and output
 
-It's worth noting that XSL does not "modify" the input file, but rather "constructs" a separate output file.
+It's important to note that XSL does not "modify" the input file, but rather "constructs" a separate output file.
 
-The processor will visit every node in the input document and will apply the appropriate template.
+The processor will always visit every node in the input document and will apply the appropriate template.
 
 For example:
 
 Imagine I have two templates:
-- `<xsl:template select="updateFoo">` counts the number of `bar` elements in the document and sets the count as an attribute on the `foo` element.
-- `<xsl:template select="removeBar">` deletes any `bar` elements it finds
+- `<xsl:template match="foo">` counts the number of `bar` elements in the document and sets the count as an attribute on the current `foo` element.
+- `<xsl:template match="bar">` deletes any `bar` elements it finds
 
-You can see the problem here -- Should we delete the bar elements before counting them? Or count them and then delete them?
+You can see the problem here -- Should we delete the bar elements before counting them? Or count them and then delete them? Which template executes first?
 
-Which template executes first? It does not matter.
+The answer is it does not matter.
 
-If we happen to walk the `bar` nodes first, the `removeBar` template will transfer nothing to the output document. Then when we walk the `foo` nodes and apply the `updateFoo` template it will count the `bar` nodes, because the `bar` nodes _still exist in the input document_.
+If we happen to walk the `bar` nodes first, the `bar` template will delete them by transferring nothing to the output document. Then when we walk the `foo` nodes and apply the `foo` template it will count the `bar` nodes, because the `bar` nodes _still exist in the input document_.
