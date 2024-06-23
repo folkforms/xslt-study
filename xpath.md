@@ -46,7 +46,13 @@ XPath has one other kind of node--the rarely used _namespace node_. To retrieve 
 
 ### The asterisk ("`*`")
 
-Selects all element nodes in the current context. Be aware that the asterisk wildcard selects element nodes only; attributes, text nodes, comments, or processing instructions aren't included. You can also use a namespace prefix with an asterisk. In our [sample sonnet](sonnet.xml), the XPath expression `auth:*` returns all element nodes in the current context that are associated with the namespace URL `http://www.authors.com/`.
+Selects all element nodes in the current context.
+
+(FIXME This needs an example)
+
+Be aware that the asterisk wildcard selects element nodes only. Attributes, text nodes, comments, or processing instructions aren't included.
+
+You can also use a namespace prefix with an asterisk. In our [sample sonnet](sonnet.xml), the XPath expression `auth:*` returns all element nodes in the current context that are associated with the namespace URL `http://www.authors.com/`.
 
 ### The at-sign and asterisk ("`@*`")
 
@@ -107,11 +113,13 @@ The expression `line[position()=3 and @style]` matches all `<line>` elements tha
 
 You can use more than one predicate if you like; `line[3][@style]` or `line[@style][3]` are both legal. They aren't equivalent, however. Predicates are evaluated from left to right.
 
-The XSLT processor handles the first pattern by selecting all of the `<line>` nodes that appear third in a set of sibling `<line>` nodes, then selecting all of those nodes that have a style attribute.
+For the first pattern, the processor selects all of the `<line>` nodes that appear third in a set of sibling `<line>` nodes, then selects all of those nodes that have a style attribute.
 
-For the second pattern, the processor selects all the `<line>` elements that have a style attribute, then selects the third node from that sequence. The first pattern can match any number of nodes, while the second pattern will never match more than one.
+For the second pattern, the processor selects all the `<line>` elements that have a style attribute, then selects the third node from that sequence.
 
-In general, the first predicate filters the nodes, the second predicate filters the nodes that made it past the first predicate, and then the third predicate filters the nodes that made it past the second, and so forth.
+The first pattern can match any number of nodes, while the second pattern will never match more than one.
+
+In general, the first predicate filters the nodes, the second predicate filters the nodes that made it past the first predicate, and then the third predicate filters the nodes that made it past the second predicate, and so on.
 
 ### Functions in predicates
 
@@ -131,13 +139,14 @@ FIXME Is there a full list of functions?
 
 In this example, the XPath expression `@size` is evaluated, and its value, whatever that happens to be, is inserted into the output tree as the value of the border attribute. Attribute value templates can be used in any literal result elements in your stylesheet.
 
-(FIXME ??? The book does not go into much detail here. Hopefully it will get back to this.)
+(FIXME The book does not go into much detail here. Hopefully it will get back to this.)
+(FIXME I have not had a chance to test this out yet)
 
 ----
 
 ## Miscellaneous
 
-### "/" is the root node
+### "`/`" is the root node
 
 The root node is the XPath node that contains the entire document. In a document "`<foo />`", "/" is not the foo element. It contains the "foo" element. The "foo" element is the document element. This is because the file might have comments, processing instructions, etc. alongside the document element.
 
