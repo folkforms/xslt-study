@@ -123,6 +123,8 @@ In addition to numbers, we can use XPath and XSLT functions inside predicates. H
 - `ancestor::table[@border="1"]`: Selects all `<table>` ancestors of the current context that have a border attribute with the value "1".
 - `count(/body/table[@border="1"])`: Returns the number of `<table>` elements with a border attribute equal to "1" that are children of `<body>` elements that are children of the root node. Notice that in this case we're using a predicate as part of the location path.
 
+FIXME Is there a full list of functions?
+
 ## Attribute value templates
 
     <table border="{@size}" />

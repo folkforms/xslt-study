@@ -2,7 +2,7 @@
 
 ## `<xsl:message>`
 
-Useful for debugging
+Useful for debugging.
 
     <xsl:message>foo = <xsl:value-of select="$foo" /></xsl:message>
 
@@ -14,11 +14,11 @@ Select all of the `<greeting>` elements in the current context and apply the app
 
 ## `<xsl:call-template>`
 
-Basically a function call
+Basically a function call.
 
     <xsl:template match="...">
       ...
-      <xsl:call-template name="addChild">
+      <xsl:call-template name="someOtherTemplate">
         <xsl:with-param name="foo" select="$x" />
         <xsl:with-param name="bar" select="$y" />
         <xsl:with-param name="muk" select="$z" />
@@ -26,11 +26,11 @@ Basically a function call
       ...
     </xsl:template>
 
-Is equivalent to calling `addChild(foo, bar, muk)`
+Is equivalent to calling `someOtherTemplate(x, y, z)`.
 
-If you get a message like "Parameter foo does not exist" it is because the target template `addChild` does not have a parameter with that name.
+If you get a message like "Parameter foo does not exist" it is because the target template `someOtherTemplate` does not have a parameter with that name.
 
-    <xsl:template name="addChild">
+    <xsl:template name="someOtherTemplate">
       <xsl:param name="foo" />
       <xsl:param name="bar" />
       <xsl:param name="muk" />
@@ -49,14 +49,16 @@ If you get a message like "Parameter foo does not exist" it is because the targe
       <xsl:element name="foo" />      <!-- Add new child element -->
     </xsl:copy>
 
-### `<xsl:param>`
+I remember these as "the short name (copy) is a shallow copy, the longer name (copy-of) is a deep copy.
+
+## `<xsl:param>`
 
     <xsl:template match="foo">
       <xsl:param name="barAttribute" select="@bar" /> <!-- $barAttribute is now the value of 'bar' in <foo bar="..." /> -->
 
 See [xsl:call-template](#xslcall-template) above.
 
-### `<xsl:text>`
+## `<xsl:text>`
 
 Provides some text:
 
@@ -64,19 +66,19 @@ Provides some text:
     <xsl:text> P. </xsl:text>
     <xsl:value-of select="/sonnet/author/last-name" />
 
-Might return "William P. Shakespeare"
+Might return "William P. Shakespeare".
 
 ----
 
 FIXME Need to go over the text below:
 
-### `<xsl:import>` vs `<xsl:include>`
+## `<xsl:import>` vs `<xsl:include>`
 
 Anything imported via `<xsl:import>` will have a lower priority than what is in the current stylesheet.
 
 FIXME I presume anything included via `<xsl:include>`` will error if it clashes with the current stylesheet.
 
-### `<xsl:variable>`
+## `<xsl:variable>`
 
 This element defines a variable. Any `<xsl:variable>` that appears as a top-level element is global to the entire stylesheet.
 
