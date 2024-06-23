@@ -4,7 +4,13 @@
 
 Useful for debugging
 
-    <xsl:message>foo = <xsl:value-of select="$foo"/></xsl:message>
+    <xsl:message>foo = <xsl:value-of select="$foo" /></xsl:message>
+
+## `<xsl:apply-templates>`
+
+    <xsl:apply-templates select="greeting" />
+
+Select all of the `<greeting>` elements in the current context and apply the appropriate template to each of them.
 
 ## `<xsl:call-template>`
 
@@ -37,10 +43,10 @@ If you get a message like "Parameter foo does not exist" it is because the targe
 
 `<xsl-copy>` is a shallow copy. It allows new child elements and/or modifications. It can perform a deep copy with the right combination of child elements. This allows you to deep copy but also modify the data. For example:
 
-    <xsl:copy>                       <!-- Shallow copy -->
-      <xsl:copy-of select="@*"/>     <!-- Copy attributes -->
-      <xsl:copy-of select="node()"/> <!-- Copy existing child elements -->
-      <xsl:element name="foo" />     <!-- Add new child element -->
+    <xsl:copy>                        <!-- Shallow copy -->
+      <xsl:copy-of select="@*" />     <!-- Copy attributes -->
+      <xsl:copy-of select="node()" /> <!-- Copy existing child elements -->
+      <xsl:element name="foo" />      <!-- Add new child element -->
     </xsl:copy>
 
 ### `<xsl:param>`
@@ -49,6 +55,16 @@ If you get a message like "Parameter foo does not exist" it is because the targe
       <xsl:param name="barAttribute" select="@bar" /> <!-- $barAttribute is now the value of 'bar' in <foo bar="..." /> -->
 
 See [xsl:call-template](#xslcall-template) above.
+
+### `<xsl:text>`
+
+Provides some text:
+
+    <xsl:value-of select="/sonnet/author/first-name" />
+    <xsl:text> P. </xsl:text>
+    <xsl:value-of select="/sonnet/author/last-name" />
+
+Might return "William P. Shakespeare"
 
 ----
 
