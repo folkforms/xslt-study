@@ -4,12 +4,11 @@
 
 `Node` is an interface.
 
-`Document`, `Element`, `Attr`, `Text`, `Comment` and `ProcessingInstruction` all all interfaces that extend the `Node` interface.
+`Document`, `Element`, `Attr`, `Text`, `Comment` and `ProcessingInstruction` are all interfaces that extend the `Node` interface.
 
 ## Text nodes are nodes
 
-A text node is a node (`Text`) like anything else. Node.getTextContent() is a convenience wrapper around Node.getChildren().get(0).getNodeValue().
-(FIXME This is correct but double-check the specifics)
+A text node is a node (`Text`) like anything else. `Node.getTextContent()` is a convenience wrapper around `Node.getChildren().get(0).getNodeValue()`. (FIXME This is correct but double-check the specifics)
 
 ## Tags vs Elements
 

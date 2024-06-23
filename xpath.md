@@ -24,7 +24,7 @@ This template selects the parent of the context node, represented by two dots.
 
 ### Absolute vs relative expressions
 
-An absolute XPath expression begins with a slash (/), which tells the XSLT processor to start at the root of the document, _regardless of the current context_. In other words, you can evaluate an absolute XPath expression from any context node you want, and the results will be the same.
+An absolute XPath expression begins with a slash ("`/`"), which tells the XSLT processor to start at the root of the document, _regardless of the current context_. In other words, you can evaluate an absolute XPath expression from any context node you want, and the results will be the same.
 
 ## Using location paths to select things besides elements
 
