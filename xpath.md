@@ -135,12 +135,26 @@ FIXME Is there a full list of functions?
 
 ## Attribute value templates
 
+An attribute value template is an XPath expression that is evaluated, and the result of that evaluation replaces the attribute value template.
+
     <table border="{@size}" />
 
 In this example, the XPath expression `@size` is evaluated, and its value, whatever that happens to be, is inserted into the output tree as the value of the border attribute. Attribute value templates can be used in any literal result elements in your stylesheet.
 
+A "literal result element" is an element e.g. a html tag. So `<table border="{@size}" />` will work ok, but `the size is {@size}` will not because it's not an element.
+
 (FIXME The book does not go into much detail here. Hopefully it will get back to this.)
-(FIXME I have not had a chance to test this out yet)
+
+## Datatypes
+
+(FIXME Move to separate file)
+
+### Datatypes in XPath 1.0
+
+In XPath 1.0, an expression returns one of four datatypes:
+
+- node-set: Represents a set of nodes. The set can be empty or it can contain any number of nodes.
+...
 
 ----
 
