@@ -147,14 +147,7 @@ A "literal result element" is an element e.g. a html tag. So `<table border="{@s
 
 ## Datatypes
 
-(FIXME Move to separate file)
-
-### Datatypes in XPath 1.0
-
-In XPath 1.0, an expression returns one of four datatypes:
-
-- node-set: Represents a set of nodes. The set can be empty or it can contain any number of nodes.
-...
+[Datatypes](xpath/datatypes.md)
 
 ----
 
