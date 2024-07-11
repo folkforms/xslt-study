@@ -171,7 +171,7 @@ The children of an element are the text, element, comment, and processing instru
 
 XPath also has node tests. A node test looks like a function, but is used to match certain types of nodes. A node test works like a predicate in that it returns only nodes that meet certain criteria:
 
-- node() - Matches all nodes. The test node() is true for every kind of node
+- node() - Matches all nodes. The test node() is true for every kind of node.
 - text() - Matches text nodes only
 - comment() - Matches comment nodes
 - processing-instruction() - Matches processing instruction nodes. If this node test includes a string, it matches processing instruction nodes with that name. For example, processing-instruction('cocoon-process') matches processing instruction nodes that begin with `<?cocoon-process>`.

@@ -1,0 +1,8 @@
+<foo>
+  <bar />
+  <muk name="m1">
+    <muk-child v="m1.1" />
+  </muk>
+  <muk name="m2" />
+  <muk name="m3" />
+</foo>

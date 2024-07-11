@@ -2,10 +2,10 @@
 
 XSLT study notes
 
-- [Introduction](introduction.md)
-- [XPath](xpath.md)
-    - [Boolean operators](xpath/boolean-operators.md)
-    - [Datatypes](xpath/datatypes.md)
-    - [Mathematical operators](xpath/mathematical-operators.md)
-- [XSL processing](xsl-processing.md)
-- [XSL elements](xsl-elements.md)
+- [Introduction](docs/introduction.md)
+- [XPath](docs/xpath.md)
+    - [Boolean operators](docs/xpath/boolean-operators.md)
+    - [Datatypes](docs/xpath/datatypes.md)
+    - [Mathematical operators](docs/xpath/mathematical-operators.md)
+- [XSL processing](docs/xsl-processing.md)
+- [XSL elements](docs/xsl-elements.md)

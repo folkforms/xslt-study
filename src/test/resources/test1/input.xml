@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<html xmlns:c="c">
+  <body>
+    <div class="foo">
+      <c:ing name="someclass" method="somemethod" value="somevalue">
+        <c:ing name="someclass2" method="somemethod2" value="somevalue2" />
+      </c:ing>
+    </div>
+  </body>
+</html>
