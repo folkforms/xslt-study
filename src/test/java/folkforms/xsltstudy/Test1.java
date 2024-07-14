@@ -14,10 +14,10 @@ import org.junit.jupiter.api.Test;
  *
  * Strange behaviour: Order does appear to matter if you add "/" or "//" to the match attribute.
  */
-public class Test1Test {
+public class Test1 {
 
   @Test
-  public void test1() throws IOException {
+  public void test() throws IOException {
     String input = Files.readString(Path.of("src/test/resources/book/test1/input.xml"));
     String stylesheet = Files.readString(Path.of("src/test/resources/book/test1/stylesheet.xsl"));
     String expected = Files.readString(Path.of("src/test/resources/book/test1/expected.html"));

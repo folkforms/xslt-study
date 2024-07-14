@@ -1,0 +1,14 @@
+<parent>
+<fooGroup>
+<bar name="foo1" other="1.1"/>
+<bar name="foo1" other="1.2"/>
+<bar name="foo1" other="1.3"/>
+</fooGroup>
+<fooGroup>
+<bar name="foo2" other="2.1"/>
+</fooGroup>
+<fooGroup>
+<bar name="foo3" other="3.1"/>
+<bar name="foo3" other="3.2"/>
+</fooGroup>
+</parent>
