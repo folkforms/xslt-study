@@ -1,0 +1,14 @@
+<foo id="foo-1">
+  <bar id="bar-1">
+    <muk id="muk-1.1" />
+    <muk id="muk-1.2" />
+  </bar>
+  <bar id="bar-2">
+    <muk id="muk-2.1" />
+    <muk id="muk-2.2" />
+  </bar>
+  <bar id="bar-3">
+    <muk id="muk-3.1" />
+    <muk id="muk-3.2" />
+  </bar>
+</foo>
