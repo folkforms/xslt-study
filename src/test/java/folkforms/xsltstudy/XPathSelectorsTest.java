@@ -45,12 +45,12 @@ public class XPathSelectorsTest {
   }
 
   @Test
-  public void atSelectorTest() throws IOException {
-    test("src/test/resources/xpath-selectors/at-selector-stylesheet.xsl", "bar-1bar-2bar-3", true);
+  public void nodeSelectorTest() throws IOException {
+    test("src/test/resources/xpath-selectors/node-selector-stylesheet.xsl", "bar-1bar-2bar-3");
   }
 
   @Test
-  public void nodeSelectorTest() throws IOException {
-    test("src/test/resources/xpath-selectors/node-selector-stylesheet.xsl", "bar-1bar-2bar-3");
+  public void atSelectorTest() throws IOException {
+    test("src/test/resources/xpath-selectors/at-selector-stylesheet.xsl", "bar-1bar-2bar-3", true);
   }
 }

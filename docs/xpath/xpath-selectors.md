@@ -17,7 +17,7 @@ Example document:
       </bar>
     </foo>
 
-### Single dot selector
+### Single dot selector "."
 
     <xsl:value-of select="." />
 
@@ -33,7 +33,7 @@ For example:
 
 Will return "foo-1".
 
-### Star/Asterisk selector
+### Star/Asterisk selector "*"
 
     <xsl:value-of select="*" />
 
@@ -49,7 +49,19 @@ For example:
 
 Will return "bar-1bar-2bar-3".
 
-### At selector
+### Node selector "node()"
+
+Selects all nodes in the current context, regardless of type. This includes elements, text, comments, processing instructions, attributes, and namespace nodes.
+
+    <xsl:template match="foo">
+      <xsl:for-each select="node()">
+        <xsl:value-of select="."/>
+      </xsl:for-each>
+    </xsl:template>
+
+Will return "bar-1\nbar-2\nbar-3".
+
+### At selector "@*"
 
     <xsl:value-of select="@*" />
 
@@ -57,18 +69,6 @@ Selects all attribute nodes in the current context.
 
     <xsl:template match="bar">
       <xsl:for-each select="@*">
-        <xsl:value-of select="."/>
-      </xsl:for-each>
-    </xsl:template>
-
-Will return "bar-1\nbar-2\nbar-3".
-
-### The `node()` selector
-
-Selects all nodes in the current context, regardless of type. This includes elements, text, comments, processing instructions, attributes, and namespace nodes.
-
-    <xsl:template match="foo">
-      <xsl:for-each select="node()">
         <xsl:value-of select="."/>
       </xsl:for-each>
     </xsl:template>
