@@ -1,5 +1,7 @@
 # XPath
 
+[Xpath selectors](./xpath/xpath-selectors.md)
+
 ## The Context
 
 Everything we do in XPath is interpreted with respect to the context.

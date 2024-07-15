@@ -59,7 +59,7 @@ Selects all nodes in the current context, regardless of type. This includes elem
       </xsl:for-each>
     </xsl:template>
 
-Will return "bar-1\nbar-2\nbar-3".
+Will return "bar-1\nbar-2\nbar-3". (The reason for the `\n` characters is because the line endings in the example file above are technically text elements so it's printing them as well.)
 
 ### At selector "@*"
 
